@@ -1,5 +1,5 @@
 # TNPG: Squirtle_Squadron  
-## Andrew Piatetsky, Weichen Lui, Jeffery Zou, Raven Tang, Ayman Habib
+## Andrew Piatetsky, Weichen Lui, Jeffrey Zou, Raven Tang, Ayman Habib
 #### Submodule Name: Squirtle_Squadron__apiatetsky30_wlui30_jzou30_rtang30_ahabib30
 
 
