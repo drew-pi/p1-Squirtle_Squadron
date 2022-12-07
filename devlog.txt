@@ -33,8 +33,15 @@ DM and Text Platform
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
-fristL -- TIMESTAMP
+Jeffrey Zou, Andrew Piatesky, Weichen Liu, Raven Tang, Ayman Habib -- 12/6/2022
 --------------------------------------------------------------
-<Thing fristL did.>
+Updated DD
+- Revamped site map
+- Added other APIs
+- Explain more about APIS
+- Rethough routes
+- Added templates
+- Revamped roles
+
 ==============================================================
 
