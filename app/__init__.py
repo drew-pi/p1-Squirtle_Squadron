@@ -2,7 +2,7 @@ from flask import Flask             #facilitate flask webserving
 from flask import render_template, request   #facilitate jinja templating
 from flask import session, redirect, url_for, make_response        #facilitate form submission
 import os 
-# import db_tools
+import db_tools
 
 #the conventional way:
 #from flask import Flask, render_template, request
