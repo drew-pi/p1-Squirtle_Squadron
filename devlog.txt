@@ -46,5 +46,8 @@ Updated DD
 aymanH -- 2022-12-07 9:18\n 
 added login, create account, and sign up files, need to route
 
+weichenL -- 2022-12-08 9:22
+added user table for DB. Also necessary login and signup methods. 
+
 ==============================================================
 
