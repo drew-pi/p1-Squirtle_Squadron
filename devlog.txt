@@ -1,26 +1,7 @@
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete these instructions once all teammates understand usage.
-  (from tilde bar above to tilde bar below)
-* rename this file devlog.txt
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template, (Ctrl-Shift up x5, Ctrl-X, Ctrl-V x2)
- modify appropriately.
-Each entry should begin with the following format:
- firstL -- TIMESTAMP\n
-e.g.: 
-clydeS -- 2999-12-31 23:59
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Squirtle Squadron
 pd#2
 ---------------------
-DM and Text Platform
-
+Higher or Lower Game
 
  ______   ______   __   __   __       ______   _______     
 /_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
@@ -32,26 +13,89 @@ DM and Text Platform
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+ravenT -- 2022-12-04 22:00
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+created and uploaded team flag
 
-Jeffrey Zou, Andrew Piatesky, Weichen Liu, Raven Tang, Ayman Habib -- 12/6/2022
---------------------------------------------------------------
-Updated DD
-- Revamped site map
-- Added other APIs
-- Explain more about APIS
-- Rethough routes
-- Added templates
-- Revamped roles
+jeffreyZ -- 2022-12-05 9:26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+contributed to task lists, APIs, project components, component map, site map, etc. of design doc
 
-aymanH -- 2022-12-07 9:18\n 
+andrewP - 2022-12-05 9:26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+contributed to task lists, APIs, project components, component map, site map, etc. of design doc
+
+weichenL - 2022-12-05 9:26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+contributed to task lists, APIs, project components, component map, site map, etc. of design doc
+
+ravenT - 2022-12-05 9:26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+contributed to task lists, APIs, project components, component map, site map, etc. of design doc
+
+aymanH - 2022-12-05 9:26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+contributed to task lists, APIs, project components, component map, site map, etc. of design doc
+
+ravenT - 2022-12-05 22:00
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+created component map
+
+andrewP - 2022-12-06 9:26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+updated design doc based on feedback:
+- revamped site map
+- added other APIs
+- elaborated more about APIS
+- rethought routes
+- added templates
+- revamped roles with more distinction and clarity
+
+jeffreyZ - 2022-12-06 9:26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+updated design doc based on feedback:
+- revamped site map
+- added other APIs
+- elaborated more about APIS
+- rethought routes
+- added templates
+- revamped roles with more distinction and clarity
+
+aymanH - 2022-12-06 9:26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+updated design doc based on feedback:
+- revamped site map
+- added other APIs
+- elaborated more about APIS
+- rethought routes
+- added templates
+- revamped roles with more distinction and clarity
+
+weichenL - 2022-12-06 9:26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+updated design doc based on feedback:
+- revamped site map
+- added other APIs
+- elaborated more about APIS
+- rethought routes
+- added templates
+- revamped roles with more distinction and clarity
+
+aymanH - 2022-12-07 9:18 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 added login, create account, and sign up files, need to route
 
-weichenL -- 2022-12-08 9:22
+weichenL - 2022-12-08 9:22
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 added user table for DB. Also necessary login and signup methods. 
 
-andrewP -- 2022-12-08 9:00am + 8:00pm
-Started working on making api accounts (very difficult because getting banned and needing phone number)
+andrewP - 2022-12-08 20:00
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+started working on making api accounts (very difficult because getting banned and needing phone number)
  - researching more apis and looking at documentation to see how they work
 
+ravenT - 2022-12-09 9:16
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cleaned up devlog formatting, uploaded most recent design doc
 ==============================================================
 
