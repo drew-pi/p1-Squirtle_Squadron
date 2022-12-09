@@ -49,5 +49,9 @@ added login, create account, and sign up files, need to route
 weichenL -- 2022-12-08 9:22
 added user table for DB. Also necessary login and signup methods. 
 
+andrewP -- 2022-12-08 9:00am + 8:00pm
+Started working on making api accounts (very difficult because getting banned and needing phone number)
+ - researching more apis and looking at documentation to see how they work
+
 ==============================================================
 
