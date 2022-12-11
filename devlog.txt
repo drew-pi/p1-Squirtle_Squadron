@@ -97,5 +97,12 @@ started working on making api accounts (very difficult because getting banned an
 ravenT - 2022-12-09 9:16
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 cleaned up devlog formatting, uploaded most recent design doc
+
+andrewP - 2022-12-11 14
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+worked on apis (have 2 working for now)
+    - created accounts
+    - looked at documentation
+    - added keys to repository
 ==============================================================
 
