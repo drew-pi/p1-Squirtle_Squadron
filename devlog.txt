@@ -107,6 +107,6 @@ worked on apis (have 2 working for now)
     
 weichenL - 2022-12-11 9:00
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-worked on flask. Fixed Routing and made login sign-up fully functional.
+worked on flask. Fixed Routing and made login and sign-up fully functional.
 ==============================================================
 
