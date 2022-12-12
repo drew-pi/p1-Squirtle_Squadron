@@ -49,7 +49,7 @@ def create_account():
         else:
             return render_template("sign_up_success.html")
             #return redirect("/login")
-    return redirect(url_for('index'))
+    return render_template("create_account.html")
     
 @app.route('/logout')
 def logout():
