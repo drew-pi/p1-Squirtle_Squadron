@@ -9,11 +9,17 @@ app.secret_key = os.urandom(32)
 @app.route('/')
 def index():
     if 'username' in session:
-        return render_template('home_page.html',
-        user=session["username"])
+        return (url_for('home'))
     return render_template( 'login.html',)
 
-
+@app.route('/home')
+def home():
+    if 'username' not in session:
+        return redirect("/login")
+    username = session['username']
+    password = session['password']
+    if db_tools.verify_account(username, password):
+        return render_template("home_page.html", username = username)
 
 @app.route('/login', methods = ['GET','POST'])
 def login():
