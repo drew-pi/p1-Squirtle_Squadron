@@ -104,5 +104,9 @@ worked on apis (have 2 working for now)
     - created accounts
     - looked at documentation
     - added keys to repository
+    
+weichenL - 2022-12-11 9:00
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+worked on flask. Fixed Routing and made login sign-up fully functional.
 ==============================================================
 
