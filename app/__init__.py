@@ -6,11 +6,12 @@ import db_tools
 
 app = Flask(__name__)    #create Flask object
 app.secret_key = os.urandom(32)
-@app.route('/')
+@app.route('/home')
 def index():
     if 'username' in session:
-        return redirect("/home")
-    return render_template('login.html') #edit
+        return render_template('home_page.html',
+        user=session["username"])
+    return render_template( 'login.html',)
 
 
 
