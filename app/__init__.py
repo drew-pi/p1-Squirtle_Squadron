@@ -6,7 +6,7 @@ import db_tools
 
 app = Flask(__name__)    #create Flask object
 app.secret_key = os.urandom(32)
-@app.route('/home')
+@app.route('/')
 def index():
     if 'username' in session:
         return render_template('home_page.html',

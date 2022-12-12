@@ -9,34 +9,31 @@
     <title> LOGIN PAGE </title>
   </head>
 
-  <body>
-    <h1>
-     SQUIRTLE SQUADRON
-    </h1>
-    <h2>
-       Enter your usernmae and password
-    </h2>
-   <br>
-
-   <form action="/login" method = "POST">
-    <div class="mb-3">
-      <label for="InputUsername" class="form-label"> Username</label>
-      <input type="text" name = "username" class="form-control" id="InputUsername" aria-describedby="UserHelp">
-      <div id="UserHelp" class="form-text">We'll never share your username with anyone else.</div>
-    </div>
-    <div class="mb-3">
-      <label for="InputPassword" class="form-label">Password</label>
-      <input type="password" name = "password" class="form-control" id="InputPassword">
-    </div>
+  <body class="p-3 m-0 border-0 bd-example">
     
-    <button type="submit" class="btn btn-primary">Submit</button>
-
-    </form>  
-
-    <h2> 
-      If you do not have an account, please click below to create one.
-    </h2>
-    <br>
+    <div class = "container-fluid">
+      <div class ="row">
+        <div class="offset-md-4 col-md-4">
+          <h1>SQUIRTLE SQUADRON</h1>
+          <br>
+          <h2>Login</h2>
+          <hr>
+          <form action="/login" method = "POST">
+            <div class="mb-3">
+              <label for="InputUsername" class="form-label"> Username</label>
+              <input type="text" name = "username" class="form-control" id="InputUsername" aria-describedby="UserHelp">
+              <div id="UserHelp" class="form-text">We'll never share your username with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="InputPassword" class="form-label">Password</label>
+              <input type="password" name = "password" class="form-control" id="InputPassword">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <!--
     <form action="/create_account" method= "POST">
