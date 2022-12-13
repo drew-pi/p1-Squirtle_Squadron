@@ -34,7 +34,7 @@ def login():
     if request.form.get('submit_button') is not None:
         return render_template("create_account.html")
     else:
-        resp = make_response(render_template('error.html',msg = "username or password is not correct"))
+        resp = make_response(render_template('error.html',msg = "Username or password is not correct"))
         return resp
 
 @app.route('/create_account', methods=['GET', 'POST'])
