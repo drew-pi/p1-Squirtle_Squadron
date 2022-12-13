@@ -51,7 +51,8 @@ def create_account():
         #print(userIn)
         #print(passIn)
         if db_tools.add_account(userIn, passIn) == -1:
-            return f"account with username {userIn} already exists"
+            resp = make_response(render_template('error.html',msg = "User already exists!"))
+            return resp
         else:
             return render_template("sign_up_success.html")
             #return redirect("/login")
