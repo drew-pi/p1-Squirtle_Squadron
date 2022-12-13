@@ -114,3 +114,6 @@ jeffreyZ - 2022-12-12 12:00
 worked on flask. Fixed Routing and updated login page with bootstrap.
 ==============================================================
 
+aymanH - 2022-12-13 9:23
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+began working on game.html file, created higher/lower framework, but still need to make it look cuter.
