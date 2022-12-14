@@ -121,3 +121,10 @@ began working on game.html file, created higher/lower framework, but still need 
 weichenL - 2022-12-11 7:28
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Added cards into homepage. Need to fix the display of images.
+
+piatetskyA - 2022-12-13 9:00 and 20:00
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Worked on apis 
+    - found the last apis that we will use 
+    - placed keys into the text files and figured out how to access them
+    - still need to create the api cards for our 3 apis
