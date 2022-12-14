@@ -117,3 +117,7 @@ worked on flask. Fixed Routing and updated login page with bootstrap.
 aymanH - 2022-12-13 9:23
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 began working on game.html file, created higher/lower framework, but still need to make it look cuter.
+
+weichenL - 2022-12-11 7:28
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Added cards into homepage. Need to fix the display of images.
