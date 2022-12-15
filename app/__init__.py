@@ -3,6 +3,7 @@ from flask import render_template, request   #facilitate jinja templating
 from flask import session, redirect, url_for, make_response        #facilitate form submission
 import os 
 import db_tools
+from api import *
 
 app = Flask(__name__)    #create Flask object
 app.secret_key = os.urandom(32)
@@ -69,6 +70,16 @@ def verify_session():
         if db_tools.verify_account(session['username'], session['password']):
             return True
     return False
+
+@app.route('/country')
+def country():
+    first_city = get_rand_city()
+    second_city = get_rand_city()
+    first_city_text = first_city['city'] + " " + first_city['region'] + " " + first_city['country']
+    second_city_text = second_city['city'] + " " + second_city['region'] + " " + second_city['country']
+    first_img_url = get_city_img("city of " + first_city['city'] + " " + first_city['country'])
+    second_img_url = get_city_img("city of " + second_city['city'] + " " + second_city['country'])
+    return render_template('country.html', first_city_text = first_city_text, second_city_text = second_city_text, first_img_url = first_img_url, second_img_url = second_img_url)
 
 if __name__ == "__main__": #false if this file imported as module
     app.debug = True 

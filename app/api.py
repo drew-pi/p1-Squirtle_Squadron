@@ -118,7 +118,7 @@ def get_rand_city():
 
 # get_city_img("Lexinton")
 resp = get_rand_city()
-print("city of " + resp['city'] + " " + resp['country'] + " " + resp['region'])
+print("city of " + resp['city'] + " " + resp['region'] + " " + resp['country'])
 print (get_city_img("city of " + resp['city'] + " " + resp['country']))
 
 
