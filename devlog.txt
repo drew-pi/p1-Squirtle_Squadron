@@ -118,6 +118,12 @@ aymanH - 2022-12-13 9:23
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 began working on game.html file, created higher/lower framework, but still need to make it look cuter.
 
+
+jeffreyZ - 2022-12-13 12:00
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+worked on flask. Updated design for all html templates. Fixed some inconvient routing and added error pages.
+==============================================================
+
 weichenL - 2022-12-11 7:28
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Added cards into homepage. Need to fix the display of images.
