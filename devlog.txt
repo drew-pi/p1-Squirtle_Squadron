@@ -112,17 +112,14 @@ worked on flask. Fixed Routing and made login and sign-up fully functional.
 jeffreyZ - 2022-12-12 12:00
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 worked on flask. Fixed Routing and updated login page with bootstrap.
-==============================================================
 
 aymanH - 2022-12-13 9:23
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 began working on game.html file, created higher/lower framework, but still need to make it look cuter.
 
-
 jeffreyZ - 2022-12-13 12:00
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 worked on flask. Updated design for all html templates. Fixed some inconvient routing and added error pages.
-==============================================================
 
 weichenL - 2022-12-11 7:28
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,3 +131,7 @@ Worked on apis
     - found the last apis that we will use 
     - placed keys into the text files and figured out how to access them
     - still need to create the api cards for our 3 apis
+
+ravenT - 2022-12-15 9:24
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Linked APIs to templates to generate 2 random cities and their corresponding country images on refresh every time (country.html, __init__.py country route, api.py)
