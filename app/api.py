@@ -28,6 +28,7 @@ def city_pop(name,country):
     response = requests.get(api_url, params=params, headers={'X-Api-Key': get_key(file_name)})
     # making sure that the api requests came back properly
     if response.status_code == requests.codes.ok:
+        print(response.json())
         return(response.json())
     else:
         print("Error:", response.status_code, response.text)
@@ -67,6 +68,7 @@ def city_weather(entry):
         return
 
     # parsing the json return
+    return response.json()
     
 def get_city_img(name): 
 
@@ -105,12 +107,15 @@ def get_rand_city():
     
     # parsing of response
     data = response.json()
+    print(response.json())
     city_name = data['data'][0]['city']
     country = data['data'][0]['country']
     region = data['data'][0]['region']
+    latitude = data['data'][0]['latitude']
+    longitude = data['data'][0]['longitude']
     # print({'city':city_name,'country':country,"region":region})
 
-    return {'city':city_name,'country':country,"region":region}
+    return {'city':city_name,'country':country,"region":region, "latitude":latitude, "longitude":longitude}
 
 
 
@@ -120,5 +125,6 @@ def get_rand_city():
 resp = get_rand_city()
 print("city of " + resp['city'] + " " + resp['region'] + " " + resp['country'])
 print (get_city_img("city of " + resp['city'] + " " + resp['country']))
+print(city_weather(resp['city']+":["+str(resp['latitude'])+","+str(resp['longitude'])+"]"))
 
 

@@ -79,7 +79,7 @@ def country():
     second_city_text = second_city['city'] + " " + second_city['region'] + " " + second_city['country']
     first_img_url = get_city_img("city of " + first_city['city'] + " " + first_city['country'])
     second_img_url = get_city_img("city of " + second_city['city'] + " " + second_city['country'])
-    return render_template('country.html', first_city_text = first_city_text, second_city_text = second_city_text, first_img_url = first_img_url, second_img_url = second_img_url)
+    return render_template('country.html', first_city_text = first_city_text, second_city_text = second_city_text, first_img_url = first_img_url, second_img_url = second_img_url, first_city_temp = "", second_city_temp = "")
 
 if __name__ == "__main__": #false if this file imported as module
     app.debug = True 
