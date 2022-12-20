@@ -2,6 +2,20 @@ from pprint import pprint
 import requests
 import random
 
+def get_cities():
+    # Choose two random cities from the API response
+    api_key = 'f9ca0722a830a37dcd77c39571e64d6f691cdefe'
+    api_url = f'https://api.census.gov/data/2019/pep/population?get=NAME,POP&for=place:*&in=state:*&key={api_key}'
+    api_response = requests.get(api_url).json()
+    cities = random.sample(api_response[1:], 2)
+
+    # Save the names and populations of the two cities as global variables
+    global city1, city2, city1_pop, city2_pop
+    city1 = cities[0][0]
+    city2 = cities[1][0]
+    city1_pop = int(cities[0][1])
+    city2_pop = int(cities[1][1])
+
 '''
 Returns the key in the specified file in string format
 '''
