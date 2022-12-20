@@ -32,14 +32,15 @@
             </div>
         </nav>
         <div class="container text-center">
+          <form action="/result" method="post">
             <div class="row">
               <div class="col">
-                <div class="card" style="width: 18rem;">
+                <div id="card_2" class="card" style="width: 18rem;">
                     <img src= "{{first_img_url}}" class="card-img-top">
                     <div class="card-body">
                       <h5 class="card-title">{{first_city_text}}</h5>
                       <p class="card-text">abc</p>
-                      <a href="#" class="btn btn-primary">HIGHER!</a>
+                      <input type="submit" name="guess" id="button_1" value="HIGHER?" class="btn btn-outline-primary" required>
                     </div>
                 </div>
               </div>
@@ -51,15 +52,39 @@
                 </div>
               </div>
               <div class="col">
-                <div class="card" style="width: 18rem;">
+                <div id="card_2" class="card" style="width: 18rem;">
                     <img src= "{{second_img_url}}" class="card-img-top">
                     <div class="card-body">
                       <h5 class="card-title">{{second_city_text}}</h5>
                       <p class="card-text">abc</p>
-                      <a href="#" class="btn btn-primary">HIGHER!</a>
+                      <input type="submit" name="guess" id="button_2" value="HIGHER?" class="btn btn-outline-primary" required>
                     </div>
                 </div>
               </div>
+            </form>
             </div>
+            <script>
+              function checkCorrect() {
+                const cardEle = document.getElementById("card_1");
+                const buttonEle = document.getElementById("button_1")
+                if (cardEle.className == "card") {
+                  cardEle.className = "card text-white bg-success mb-3";
+                }
+                if (buttonEle.className == "btn btn-outline-primary") {
+                    buttomEle.className = "btn bg-light btn-outline-success";
+                }
+                setTimeout(reset, 3000);
+              }
+              function reset() {
+                const cardEle = document.getElementById("card_1");
+                const buttonEle = document.getElementById("button_1")
+                if (cardEle.className == "card text-white bg-success mb-3") {
+                  cardEle.className = "card";
+                }
+                if (buttonEle.className == "btn bg-light btn-outline-success") {
+                    buttomEle.className = "btn btn-outline-primary";
+                }
+              }
+            </script>
     </body>
 </html>
