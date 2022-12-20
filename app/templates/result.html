@@ -1,0 +1,14 @@
+<!-- result.html -->
+<!doctype html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <h1>Result</h1>
+    <p>Your guess was {{ result }}</p>
+    {% if result == 'Incorrect' %}
+        <p><a href="/play-again">Play again</a></p>
+    {% endif %}
+</body>
+</html>
