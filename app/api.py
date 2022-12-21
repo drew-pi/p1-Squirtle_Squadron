@@ -2,6 +2,7 @@ from pprint import pprint
 import requests
 import random
 
+
 def get_cities():
     # Choose two random cities from the API response
     api_key = 'f9ca0722a830a37dcd77c39571e64d6f691cdefe'

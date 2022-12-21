@@ -135,3 +135,11 @@ Worked on apis
 ravenT - 2022-12-15 9:24
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Linked APIs to templates to generate 2 random cities and their corresponding country images on refresh every time (country.html, __init__.py country route, api.py)
+
+jeffZ - 2022-12-15 11:00
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+made working helper api functions to get 2 random cities and their population. made basic template of comparison feature.
+
+jeffZ - 2022-12-20 12:00
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+completed functionality of the first city higher or lower game + added css + fixed routing so website is functional 

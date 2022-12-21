@@ -29,6 +29,9 @@ def get_cities():
     city2 = cities[1][0]
     city1_pop = int(cities[0][1])
     city2_pop = int(cities[1][1])
+    print(city1_pop,city2_pop)
+
+
 
 @app.route('/')
 def index():
@@ -109,7 +112,7 @@ def game():
     get_cities()
 
     # Render the home page template with the city names
-    return render_template('game.html', city1=city1, city2=city2)
+    return render_template('game.html', city1=city1, city2=city2, city1_pop=city1_pop, city2_pop=city2_pop)
 
 @app.route('/result', methods=['POST'])
 def result():
@@ -124,19 +127,19 @@ def result():
         if city1_pop > city2_pop:
             result = 'Correct'
             get_cities()
-            return render_template('game.html', city1=city1, city2=city2)
+            return render_template('game.html', city1=city1, city2=city2, city1_pop=city1_pop, city2_pop=city2_pop)
         else:
             result = 'Incorrect'
     elif guess == 'Lower':
         if city1_pop < city2_pop:
             result = 'Correct'
             get_cities()
-            return render_template('game.html', city1=city1, city2=city2)
+            return render_template('game.html', city1=city1, city2=city2, city1_pop=city1_pop, city2_pop=city2_pop)
         else:
             result = 'Incorrect'
 
     # Render the result template with the city names and result
-    return render_template('result.html', city1=city1, city2=city2, result=result)
+    return render_template('result.html', city1=city1, city2=city2, city1_pop=city1_pop, city2_pop=city2_pop, result=result)
 
 @app.route('/play-again')
 def play_again():
