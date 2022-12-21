@@ -143,3 +143,7 @@ made working helper api functions to get 2 random cities and their population. m
 jeffZ - 2022-12-20 12:00
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 completed functionality of the first city higher or lower game + added css + fixed routing so website is functional 
+
+jeffZ - 2022-12-21 1:30
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Added score feature

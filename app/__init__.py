@@ -10,11 +10,13 @@ import requests
 app = Flask(__name__)    #create Flask object
 app.secret_key = os.urandom(32)
 
+# https://api.census.gov/data/2019/pep/population?get=NAME,POP&for=place:*&in=state:*&key=f9ca0722a830a37dcd77c39571e64d6f691cdefe
 # Global variables to store the names and populations of the two cities
 city1 = None
 city2 = None
 city1_pop = None
 city2_pop = None
+score= int(0)
 
 def get_cities():
     # Choose two random cities from the API response
@@ -120,35 +122,38 @@ def result():
     guess = request.form['guess']
 
     # Get the names and populations of the two cities from the global variables
-    global city1, city2, city1_pop, city2_pop
+    global city1, city2, city1_pop, city2_pop, score
 
     # Compare the populations of the two cities
     if guess == 'Higher':
         if city1_pop > city2_pop:
             result = 'Correct'
             get_cities()
-            return render_template('game.html', city1=city1, city2=city2, city1_pop=city1_pop, city2_pop=city2_pop)
+            score=score+1
+            return render_template('game.html', city1=city1, city2=city2, city1_pop=city1_pop, city2_pop=city2_pop,score=score)
         else:
             result = 'Incorrect'
     elif guess == 'Lower':
         if city1_pop < city2_pop:
             result = 'Correct'
             get_cities()
-            return render_template('game.html', city1=city1, city2=city2, city1_pop=city1_pop, city2_pop=city2_pop)
+            score=score+1
+            return render_template('game.html', city1=city1, city2=city2, city1_pop=city1_pop, city2_pop=city2_pop,score=score)
         else:
             result = 'Incorrect'
 
     # Render the result template with the city names and result
-    return render_template('result.html', city1=city1, city2=city2, city1_pop=city1_pop, city2_pop=city2_pop, result=result)
+    return render_template('result.html', city1=city1, city2=city2, city1_pop=city1_pop, city2_pop=city2_pop, result=result, score=score)
 
 @app.route('/play-again')
 def play_again():
     # Reset the global variables
-    global city1, city2, city1_pop, city2_pop
+    global city1, city2, city1_pop, city2_pop, score
     city1 = None
     city2 = None
     city1_pop = None
     city2_pop = None
+    score = int(0)
 
     # Redirect to the home page
     return redirect('/game')
