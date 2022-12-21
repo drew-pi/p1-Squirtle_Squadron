@@ -13,6 +13,7 @@
   <body class="p-3 m-0 border-0 bd-example">
     <h1>SQUIRTLE SQUADRON</h1>
 
+    <div class = "background-image">
         <!-- Navbar feature -->
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
@@ -33,7 +34,7 @@
       <p class="fs-4">Welcome, {{username}} !</p>
       <hr>
       <form action="/logout">
-        <button type="submit" class="btn btn-primary col-12">Sign Out</button>
+        <button type="submit" class="btn btn-danger col-12">Sign Out</button>
     </form>
     </div>
 
@@ -46,31 +47,42 @@
       </div>
     </div>
 
-    <div class = "container w-25 text-center">
-      <div class = "row">
-        <div class = "col-6">
-          <div class = "card">
-            <img src = "../static/images/higherOrLower.jpg" alt = "Gamemode Uno" class = "card-img-top">
-            <div class = "card-body">
-              <h5 class = "card-title"> Gamemode Uno </h5>
-              <p class = "card-text"> Higher Or Lower Gamemode</p>
-              <a class="btn btn-primary" href="game" role="button">Play!</a>
+      <div class = "container w-50 text-center">
+        <div class = "row">
+          <div class = "col-6">
+            <div class = "card">
+              <img src = "../static/images/higherOrLower.jpg" alt = "Gamemode Uno" class = "card-img-top">
+              <div class = "card-body">
+                <h5 class = "card-title"> Gamemode Uno </h5>
+                <p class = "card-text"> Higher Or Lower Gamemode</p>
+                <a class="btn btn-primary" href="game" role="button">Play!</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class = "col-6">
-          <div class = "card">
-            <img src = "../static/images/img_2.jpg" alt = "Gamemode Dos" class = "card-img-top">
-            <div class = "card-body">
-              <h5 class = "card-title"> Gamemode Dos </h5>
-              <p class = "card-text"> Guess The City Gamemode</p>
-              <a class="btn btn-primary" href="game" role="button">Play!</a>
+          <div class = "col-6">
+            <div class = "card">
+              <img src = "../static/images/img_2.jpg" alt = "Gamemode Dos" class = "card-img-top">
+              <div class = "card-body">
+                <h5 class = "card-title"> Gamemode Dos </h5>
+                <p class = "card-text"> Guess The City Gamemode</p>
+                <a class="btn btn-primary" href="game" role="button">Play!</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
 
   </body>
+
+  <style>
+    .background-image {
+      background-image: url('../static/images/homebackground.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 1000px;
+    }
+  </style>
 
 </html>
