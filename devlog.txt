@@ -147,3 +147,14 @@ completed functionality of the first city higher or lower game + added css + fix
 jeffZ - 2022-12-21 1:30
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Added score feature
+
+jeffZ - 2022-12-22 2:50
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Added last apis(geonames for larger international cities and openstreetmap for images)
+Created a famous edition gamemode where instead of guessing on smaller cities or towns in the US(which no one should be an expert on), you guess on larger cities
+Added pictures underneath(couldn't find real images so just used a map overview for now)
+Added new routes for the new gamemode plus fixed some minor bugs + inconvinences
+To Do List For Tomorrow:
+- Leaderboard
+- Possible images for small towns
+- Update bootstrap + JS if possible

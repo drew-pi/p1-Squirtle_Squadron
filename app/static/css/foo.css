@@ -3,7 +3,19 @@
     width:100%;
 }
 
+.rightside,.leftside {
+    height:100vh;
+    width:100%;
+}
 
 .left{
+    padding-bottom:15px;
+}
+
+.right{
+    
+}
+
+.leftside{
     padding-bottom:15px;
 }

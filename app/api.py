@@ -139,6 +139,6 @@ def get_rand_city():
 resp = get_rand_city()
 print("city of " + resp['city'] + " " + resp['region'] + " " + resp['country'])
 print (get_city_img("city of " + resp['city'] + " " + resp['country']))
-print(city_weather(resp['city']+":["+str(resp['latitude'])+","+str(resp['longitude'])+"]"))
+#print(city_weather(resp['city']+":["+str(resp['latitude'])+","+str(resp['longitude'])+"]"))
 
 
