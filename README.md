@@ -4,7 +4,7 @@
 
 
 ### Our Project
- - Create a higher-lower game that involves apis that would retrieve that amount of followers an influencer has or of similar variety.could possibly add some mini-games alongside it.  
+ - Create a higher-lower game that involves apis that would retrieve the population of 2 random cities and you would have to guess whether or not the 2nd city would have a higher or lower population. It has 2 gamemodes:classic with unknown random cities/towns from the U.S and a famous editon:with more famous international cities.
 
 API CARDS: WIP
 
