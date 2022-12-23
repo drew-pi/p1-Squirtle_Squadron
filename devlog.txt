@@ -166,3 +166,8 @@ To Do List For Tomorrow:
 WeichenL - 2022-12-22 10:00
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Finalized API cards.
+
+JeffreyZ - 2022-12-22 11:00
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fixed conditional issue that was brough to attention during demo.
+Updated readme and requirements. Linked API cards, Got rid of legacy code.
