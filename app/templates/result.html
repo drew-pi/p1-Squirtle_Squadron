@@ -15,7 +15,8 @@
 
         <div class = "container text-center p-5">
             <h1>Results: You got {{score}} right!</h1>
-            <p>Your guess was {{ result }}. <br> {{city2}}'s population is {{city2_pop}} while {{city1}}'s population is {{city1_pop}}.</p>
+            <br>
+            <p>Your guess was {{ result }}. <br> {{city2}} has a population of {{city2_pop}} while {{city1}}'s has a population of {{city1_pop}}.</p>
             {% if result == 'Incorrect' %}
                 <a class="btn btn-primary" href="play-again" role="button">Play Again</a>
                 <br>

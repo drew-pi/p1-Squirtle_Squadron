@@ -19,10 +19,15 @@ city2_pop = None
 score= int(0)
 city1_img_url = None
 city2_img_url = None
+city1_lat = None 
+city1_lng = None
+city2_lat = None
+city2_lng = None
+
 
 def get_cities():
     # Choose two random cities from the API response
-    api_key = 'f9ca0722a830a37dcd77c39571e64d6f691cdefe'
+    api_key = get_key('key_uscensus.txt')
     api_url = f'https://api.census.gov/data/2019/pep/population?get=NAME,POP&for=place:*&in=state:*&key={api_key}'
     api_response = requests.get(api_url).json()
     cities = random.sample(api_response[1:], 2)
@@ -50,9 +55,10 @@ def get_coordinates_for_city(city):
     return lat, lng
 
 def get_famous_cities():
-    global city1, city2, city1_pop, city2_pop, city1_lat, city1_lng, city2_lat, city2_lng
+    global city1, city2, city1_pop, city2_pop, city1_lat, city1_lng, city2_lat, city2_lng, city1_img_url, city2_img_url
     # construct the API url with your API username and no bounds parameters
-    api_url = f'http://api.geonames.org/citiesJSON?north=90&south=-90&east=180&west=-180&lang=en&username=squirtlesquadron'
+    api_key = get_key('key_geonames.txt')
+    api_url = f'http://api.geonames.org/citiesJSON?north=90&south=-90&east=180&west=-180&lang=en&username={api_key}'
     
     # make a GET request to the API
     response = requests.get(api_url)
@@ -75,9 +81,12 @@ def get_famous_cities():
     city2 = city2list['name']
     city1_pop = city1list['population']
     city2_pop = city2list['population']
-    
+    city1_lat, city1_lng = get_coordinates_for_city(city1)
+    city1_img_url = get_image(city1_lat,city1_lng)
+    city2_lat, city2_lng = get_coordinates_for_city(city2)
+    city2_img_url = get_image(city2_lat,city2_lng)
 
-    return city1,city2,city1_pop,city2_pop
+    return city1,city2,city1_pop,city2_pop, city1_img_url, city2_img_url
     
         
         
@@ -172,10 +181,8 @@ def game():
 @app.route('/fgame')
 def fgame():
     get_famous_cities()
-    city1_lat, city1_lng = get_coordinates_for_city(city1)
-    city1_img_url = get_image(city1_lat,city1_lng)
-    city2_lat, city2_lng = get_coordinates_for_city(city2)
-    city2_img_url = get_image(city2_lat,city2_lng)
+
+    
     # Render the home page template with the city names
     print(city1_img_url)
     return render_template('fgame.html', city1=city1, city2=city2, city1_pop=city1_pop, city2_pop=city2_pop, score=score,city1_img_url=city1_img_url,city2_img_url=city2_img_url)
@@ -190,7 +197,7 @@ def result():
 
     # Compare the populations of the two cities
     if guess == 'Higher':
-        if city1_pop > city2_pop:
+        if city2_pop > city1_pop:
             result = 'Correct'
             get_cities()
             score=score+1
@@ -198,7 +205,7 @@ def result():
         else:
             result = 'Incorrect'
     elif guess == 'Lower':
-        if city1_pop < city2_pop:
+        if city2_pop < city1_pop:
             result = 'Correct'
             get_cities()
             score=score+1
@@ -219,7 +226,7 @@ def fresult():
 
     # Compare the populations of the two cities
     if guess == 'Higher':
-        if city1_pop > city2_pop:
+        if city2_pop > city1_pop:
             result = 'Correct'
             get_famous_cities()
             score=score+1
@@ -227,7 +234,7 @@ def fresult():
         else:
             result = 'Incorrect'
     elif guess == 'Lower':
-        if city1_pop < city2_pop:
+        if city2_pop < city1_pop:
             result = 'Correct'
             get_famous_cities()
             score=score+1
@@ -254,7 +261,7 @@ def play_again():
 @app.route('/fplay-again')
 def fplay_again():
     # Reset the global variables
-    global city1, city2, city1_pop, city2_pop, score, city1_lat, city1_lng, city2_lat, city2_lng
+    global city1, city2, city1_pop, city2_pop, score, city1_lat, city1_lng, city2_lat, city2_lng, city1_img_url, city2_img_url
     city1 = None
     city2 = None
     city1_pop = None
@@ -264,6 +271,8 @@ def fplay_again():
     city1_lng = None
     city2_lat = None
     city2_lng = None
+    city1_img_url = None
+    city2_img_url = None
 
     # Redirect to the home page
     return redirect('/fgame')

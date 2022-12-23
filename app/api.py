@@ -1,7 +1,24 @@
 from pprint import pprint
-import requests
+from flask import Flask             #facilitate flask webserving
+from flask import render_template, request   #facilitate jinja templating
+from flask import session, redirect, url_for, make_response        #facilitate form submission
+import os 
+import db_tools
+from api import *
 import random
+import requests
 
+city1 = None
+city2 = None
+city1_pop = None
+city2_pop = None
+score= int(0)
+city1_img_url = None
+city2_img_url = None
+city1_lat = None 
+city1_lng = None
+city2_lat = None
+city2_lng = None
 
 def get_cities():
     # Choose two random cities from the API response
@@ -17,6 +34,60 @@ def get_cities():
     city1_pop = int(cities[0][1])
     city2_pop = int(cities[1][1])
 
+def get_coordinates_for_city(city):
+    # Use the OpenStreetMap API to get the coordinates of the city
+    api_url = f"https://nominatim.openstreetmap.org/search?format=json&q={city}"
+
+    # Make the API request
+    response = requests.get(api_url)
+    data = response.json()
+
+    # Get the latitude and longitude from the API response
+    lat = data[0]["lat"]
+    lng = data[0]["lon"]
+
+    return lat, lng
+
+def get_famous_cities():
+    global city1, city2, city1_pop, city2_pop, city1_lat, city1_lng, city2_lat, city2_lng, city1_img_url, city2_img_url
+    # construct the API url with your API username and no bounds parameters
+    api_url = f'http://api.geonames.org/citiesJSON?north=90&south=-90&east=180&west=-180&lang=en&username=squirtlesquadron'
+    
+    # make a GET request to the API
+    response = requests.get(api_url)
+    
+    # check if the "geonames" key is present in the response
+    if 'geonames' in response.json():
+        # get the list of cities from the response
+        cities = response.json()['geonames']
+    else:
+        # return an error message if the key is not present
+        return "Error: Could not get list of cities from the API response."
+    
+    # choose two random cities from the list
+
+    city1list = random.choice(cities)
+    city2list = random.choice(cities)
+    while city1list['name'] == city2list['name']:
+        city2list = random.choice(cities)
+    city1 = city1list['name']
+    city2 = city2list['name']
+    city1_pop = city1list['population']
+    city2_pop = city2list['population']
+    city1_lat, city1_lng = get_coordinates_for_city(city1)
+    city1_img_url = get_image(city1_lat,city1_lng)
+    city2_lat, city2_lng = get_coordinates_for_city(city2)
+    city2_img_url = get_image(city2_lat,city2_lng)
+
+    return city1,city2,city1_pop,city2_pop, city1_img_url, city2_img_url
+
+def get_image(lat, lng):
+    # Use the OpenStreetMap API to get an image for the city
+    api_url = f"https://static-maps.yandex.ru/1.x/?lang=en_US&ll={lng},{lat}&z=12&l=map"
+
+    # Return the API URL as the image URL
+    return api_url
+
 '''
 Returns the key in the specified file in string format
 '''
@@ -25,120 +96,5 @@ def get_key(file_name: str):
 
     with open(path) as key:
         return key.read().strip('\n')
-
-
-'''
-Uses api ninjas city api to get population of a given city in a given country
-'''
-def city_pop(name,country):
-
-    # docs: https://api-ninjas.com/api/city
-
-    file_name = 'key_citypop.txt'
-    api_url = "https://api.api-ninjas.com/v1/city?"
-    params = {
-        'name':{name},
-        'country':{country}
-    }
-    response = requests.get(api_url, params=params, headers={'X-Api-Key': get_key(file_name)})
-    # making sure that the api requests came back properly
-    if response.status_code == requests.codes.ok:
-        print(response.json())
-        return(response.json())
-    else:
-        print("Error:", response.status_code, response.text)
-
-
-'''
-stored in database like this: "<city_name>:[<lat>,<lon>]" in string form so that we can parse
-found in a sqlite table in the above format
-'''
-def city_weather(entry):
-
-    # docs: https://openweathermap.org/current
-
-    file_name = "key_cityweather.txt"
-    api_url = "https://api.openweathermap.org/data/2.5/weather?"
-
-    # parsing of entry
-    city = entry[:entry.find(":")]
-    coords = entry[entry.find("[")+1:entry.find("]")]
-    lat = float(coords[:coords.find(",")])
-    lon = float(coords[coords.find(",")+1:])
-
-    # params = {
-    #     "lat":lat,
-    #     "lon":lon,
-    #     'units':'imperial',
-    #     "appid":get_key(file_name)
-    # }
-    # response = requests.get(api_url, params =params) # doesn't work for some reason
-
-    url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=imperial&appid={get_key(file_name)}"
-    response = requests.get(url)
-
-    # making sure that the api requests came back properly
-    if response.status_code != requests.codes.ok:
-        print("Error:", response.status_code, response.text)
-        return
-
-    # parsing the json return
-    return response.json()
-    
-def get_city_img(name): 
-
-    api_url = "https://api.pexels.com/v1/search?"
-    file_name = "key_cityimg.txt"
-
-    params = {
-        "query":{name},
-        "per_page":{1}
-    }
-
-    response = requests.get(api_url,params=params,headers={"Authorization":get_key(file_name)})
-
-    # parsing the response
-    data = response.json()
-    img_url = data['photos'][0]['src']['original']
-    site_url = data['photos'][0]['url']
-    print("this is the site picture: " + site_url)
-    return img_url
-
-
-
-def get_rand_city():
-
-    # documentation: http://geodb-cities-api.wirefreethought.com/demo
-
-    api_url = "http://geodb-free-service.wirefreethought.com/v1/geo/cities?"
-
-    params = {
-        "minPopulation":1000000,
-        "limit":1,
-        "offset":random.randint(0,1530)
-    }
-
-    response = requests.get(api_url,params=params)
-    
-    # parsing of response
-    data = response.json()
-    print(response.json())
-    city_name = data['data'][0]['city']
-    country = data['data'][0]['country']
-    region = data['data'][0]['region']
-    latitude = data['data'][0]['latitude']
-    longitude = data['data'][0]['longitude']
-    # print({'city':city_name,'country':country,"region":region})
-
-    return {'city':city_name,'country':country,"region":region, "latitude":latitude, "longitude":longitude}
-
-
-
-
-# get_city_img("Lexinton")
-resp = get_rand_city()
-print("city of " + resp['city'] + " " + resp['region'] + " " + resp['country'])
-print (get_city_img("city of " + resp['city'] + " " + resp['country']))
-#print(city_weather(resp['city']+":["+str(resp['latitude'])+","+str(resp['longitude'])+"]"))
 
 
