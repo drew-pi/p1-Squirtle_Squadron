@@ -6,7 +6,11 @@
 ### Our Project
  - Create a higher-lower game that involves apis that would retrieve the population of 2 random cities and you would have to guess whether or not the 2nd city would have a higher or lower population. It has 2 gamemodes:classic with unknown random cities/towns from the U.S and a famous editon:with more famous international cities.
 
-API CARDS: WIP
+### API CARDS: 
+ - Openstreetmap API: https://github.com/stuy-softdev/notes-and-code/blob/bab7c73a2b06105b9ca0cab752f0d583c104a47e/api_kb/411_on_OpenStreetMap.md
+ - Geonames API: https://github.com/stuy-softdev/notes-and-code/blob/bab7c73a2b06105b9ca0cab752f0d583c104a47e/api_kb/411_on_geoapify_static_maps.md (the api card has the wrong name and link. should be geonames and https://www.geonames.org/export/ws-overview.html)
+ - US Census API: https://github.com/stuy-softdev/notes-and-code/blob/bab7c73a2b06105b9ca0cab752f0d583c104a47e/api_kb/411_on_USCensus
+
 
 
 ### Launch Codes
